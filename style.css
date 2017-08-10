@@ -131,7 +131,7 @@ div {
 
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px)
     .ch-info-wrap,
     .ch-info {
         top: 15%;
@@ -145,7 +145,7 @@ div {
     .ch-info-wrap {
         top: 20px;
         left: 20px;
-        background: rgba(255,200,200,0.8);
+        background: rgba(255,200,200,0.8) url();
         box-shadow:
                 0 0 0 20px rgba(255,255,255,0.2),
                 inset 0 0 3px rgba(115,114, 23, 0.8);
@@ -241,5 +241,3 @@ div {
         opacity: 1;
         pointer-events: auto;
     }
-
-}
