@@ -131,7 +131,7 @@ div {
 
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px)
     .ch-info-wrap,
     .ch-info {
         top: 15%;
@@ -238,4 +238,3 @@ div {
         opacity: 1;
         pointer-events: auto;
     }
-}
