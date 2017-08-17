@@ -386,6 +386,10 @@ p#back {
     opacity: 1;
 }
 
+.extra-space-beneath-card {
+    margin-bottom: 77.6px;
+}
+
 /* Small text on card, "Bootstrap, HTML" etc. */
 .work .card p {
     margin: 0;
@@ -405,6 +409,9 @@ p#back {
 
 /*for-desktop-up*/
 @media screen and (min-width: 1200px) {
+    .extra-space-beneath-card {
+        margin-bottom: 0px;
+    }
     .work img {
         filter: grayscale(100%);
         -webkit-filter: grayscale(100%);
