@@ -1,93 +1,7 @@
-div {
-    background-color: rgba(0,0,0,0.0);
-}
-
-.work {
-    border-radius: 0px;
-    padding: 0px;
-    border: 5px solid #FFF;
-    position: relative;
-    display: block;
-}
-
-.work img {
-    display: block;
-    max-width: 100%;
-}
-
-.work .card {
-    position: absolute;
-    background: rgba(0,0,0,0.5);
-    color: #FFF;
-    padding: 10px 10px 10px 10px;
-    transition: 1.5s;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    text-align: center;
-}
-
-.work .card p {
-    margin: 0;
-    color: #fff;
-    font-style: italic;
-    font-size: 13px;
-    opacity: 0.7;
-
-}
-
-.work .card h2 {
-    padding: 0;
-    margin: 0;
-    font-family: "Dancing Script", sans-serif;
-    opacity: 0.9;
-}
-
-.work:hover .card {
-    opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .work .card {
-        opacity: 1;
-        padding: 20px 84px 15px 20px;
-        background: #FFF;
-        border: none;
-        color: #2646FF;
-    }
-}
-
-.section-header h2{
-    text-transform: uppercase;
-    font-size: 30px;
-    font-family: "Open Sans Condensed", Arial, sans-serif;
-    text-align: center;
-    margin: 0 0 10px 0;
-}
-
-#image-container a{
-    width: 2em;
-    height: 10em !important;
-    text-align: center;
-    overflow: hidden;
-}
-
-#image-container a img{
-    padding-top: 0.25em;
-    width: inherit;
-    overflow: hidden;
-    opacity: 0.7;
-    transition: all 0.3s ease-in-out 0.1s;
-}
-
-#image-container:hover a img {
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.1);
-    opacity: 1;
-}
-
+/*********** SECTION ONE - CIRCLE HEADER ************/
+/* Outermost layer of circle header*/
 .ch-grid {
-    margin: 20px 0 0 0;
+    margin: 70px 0 0 0;
     padding: 0;
     display: block;
     text-align: center;
@@ -102,14 +16,15 @@ div {
 .ch-grid:after {
     clear: both;
 }
-
+/* Decides size of all of header circle except text. */
 .ch-grid li {
-    width: 420px;
-    height: 420px;
+    width: 320px;
+    height: 320px;
     display: inline-block;
-    margin: 20px;
+    margin: 0 0 0 0;
 }
 
+/* Every child is relative to this */
 .ch-item {
     width: 100%;
     height: 100%;
@@ -119,76 +34,168 @@ div {
     cursor: default;
 }
 
+/* Positions ch-info and ch-info-wrap card. Which includes front and back. I believe ch-info-wrap is the darker circle which shows on hover. Controls size as well. */
 .ch-info-wrap,
 .ch-info {
     position: absolute;
-    top: 4%;
-    bottom: 4%;
-    right: 4%;
-    left: 4%;
+    top: 2.5%;
+    bottom: 0%;
+    right: 0%;
+    left: 2.5%;
+    height: 95%;
+    width: 95%;
     display: block;
     border-radius: 50%;
-
 }
 
-@media only screen and (min-width: 768px)
-    .ch-info-wrap,
-    .ch-info {
-        top: 15%;
-        left: 50%;
-        margin-left: -209px;
-        height: 418px;
-        width: 418px;
+/* Decides placement and size of pink circle with everything it contains. Background attribute is the color of the pink circle. */
+.ch-info-wrap {
+    top: 3%;
+    left: 3%;
+    right: 3%;
+    bottom: 3%;
+    height: auto;
+    width: auto;
+    background: rgba(100, 150, 235, 0.8);
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2),
+    inset 0 0 3px rgba(115, 114, 23, 0.8);
+}
+
+/* Sizes everything inside ch-info div. */
+.ch-info > div {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Sentrerer kanskje bildebakgr. når det fins en. */
+}
+
+/* On Hover animations for header circle */
+.ch-item:hover .ch-info-front {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.ch-item:hover .ch-info-back {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ch-info .ch-info-front {
+    transition: all 0.6s ease-in-out;
+}
+/* Sets background for info-back card */
+.ch-info .ch-info-back {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    transform: scale(1.3);
+    transition: all 0.4s ease-in-out 0.2s;
+}
+
+/* TEXT STYLING FOR HEADER CIRCLE*/
+/* "Sigrid Marita Kvamme" text */
+.ch-info h3 {
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 3em;
+    margin: 0 0px;
+    padding: 15% 0 0 0;
+    height:0px;
+    font-family: 'Dancing Script', Arial, sans-serif;
+    text-shadow:
+            0 0 1px #fff,
+            0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* "I'm taking you for an adventure!" text. */
+.ch-info h2 {
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 2em;
+    margin: 0 15px;
+    padding: 80px 0 0 0;
+    height: 80px;
+    font-family: 'Dancing Script', Arial, sans-serif;
+    text-shadow:
+            0 0 1px #fff,
+            0 1px 2px rgba(0,0,0,0.3);
+}
+/*?*/
+.ch-info h5 {
+    color: #fff;
+    padding: 9px 5px 0;
+    font-style: italic;
+    margin: 100px 30px 0px 30px;
+    font-size: 8px;
+}
+
+/* "Full stack developer" text. Margin positions it.*/
+.ch-info p {
+    color: #fff;
+    padding: 10px 5px 0;
+    margin: 150px 30px;
+    font-size: 11px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* Sizes arrow down icon from font awesome */
+i#circle {
+    font-size: 25px;
+}
+
+/* Customizes "Now scroll along" text */
+p#back {
+    border-top: 0px;
+    margin: 10px 30px;
+    line-height: 30px;
+}
+/* Link in circle header that guides you to "Selected work". */
+.ch-info p#back a {
+    display: block;
+    color: #fff;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding-top: 4px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+/* Link in circle header that guides you to "Selected work". */
+.ch-info p#back a:hover {
+    opacity: 0.7;
+}
+
+/*for-tablet-portrait-up*/
+@media screen and (min-width: 600px) {
+    .ch-grid li {
+        width: 400px;
+        height: 400px;
     }
-
-
-    .ch-info-wrap {
-        top: 20px;
-        left: 20px;
-        background: rgba(255,200,200,0.8) url();
-        box-shadow:
-                0 0 0 20px rgba(255,255,255,0.2),
-                inset 0 0 3px rgba(115,114, 23, 0.8);
-
-    }
-
-    .ch-info > div {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-position: center center;
-    }
-
-    .ch-info .ch-info-front {
-        transition: all 0.6s ease-in-out;
-    }
-
-    .ch-info .ch-info-back {
-        opacity: 0;
-        background: rgba(119, 119, 119, 0.07);
-        pointer-events: none;
-        transform: scale(1.3);
-        transition: all 0.4s ease-in-out 0.2s;
-    }
-
+    /* "Sigrid Marita Kvamme" text */
     .ch-info h3 {
-        color: #fff;
-        letter-spacing: 2px;
-        font-size: 50px;
-        margin: 0 15px;
-        padding: 70px 0 0 0;
-        height: 80px;
+        font-size: 3.5em;
+        margin: 0 0px;
+        padding: 15% 0 0 0;
+        height: 0px;
         font-family: 'Dancing Script', Arial, sans-serif;
         text-shadow:
                 0 0 1px #fff,
                 0 1px 2px rgba(0,0,0,0.3);
     }
+
+    /* "I'm taking you for an adventure!" text. */
     .ch-info h2 {
-        color: #fff;
-        letter-spacing: 2px;
-        font-size: 40px;
+        font-size: 2.5em;
         margin: 0 15px;
         padding: 100px 0 0 0;
         height: 80px;
@@ -197,47 +204,529 @@ div {
                 0 0 1px #fff,
                 0 1px 2px rgba(0,0,0,0.3);
     }
-
+    /* "A good adventure might be out of stock" text. */
     .ch-info h5 {
-        color: #fff;
-        padding: 10px 5px 0;
-        font-style: italic;
-        margin: 150px 30px;
-        font-size: 10px;
+        padding: 9px 5px 0;
+        margin: 120px 30px 0px 30px;
+        font-size: 0.7em;
     }
 
+    /* "Full stack developer" text. Margin positions it.*/
     .ch-info p {
-        color: #fff;
         padding: 10px 5px 0;
-        font-style: italic;
         margin: 180px 30px;
-        font-size: 13px;
+        font-size: 12px;
+        border-top: 1px solid rgba(255,255,255,0.5);
+    }
+    .ch-info p#back a {
+        font-size: 12px;
+    }
+
+    /* Sizes arrow down icon from font awesome */
+    i#circle {
+        font-size: 2.5em;
+    }
+
+    /* Customizes "Now scroll along" text */
+    p#back {
+        border-top: 0px;
+        margin: 10px 30px;
+        line-height: 40px;
+    }
+}
+
+/*for-tablet-landscape-up*/
+@media screen and (min-width: 900px) {
+    .ch-grid li {
+        width: 425px;
+        height: 425px;
+    }
+    /* "Sigrid Marita Kvamme" text */
+    .ch-info h3 {
+        font-size: 3.7em;
+        padding: 20% 0 0 0;
+        text-shadow:
+                0 0 1px #fff,
+                0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* "I'm taking you for an adventure!" text. */
+    .ch-info h2 {
+        font-size: 2.7em;
+        margin: 0 15px;
+        padding: 120px 0 0 0;
+        height: 80px;
+        text-shadow:
+                0 0 1px #fff,
+                0 1px 2px rgba(0,0,0,0.3);
+    }
+    /* "A good adventure might be out of stock" text. */
+    .ch-info h5 {
+        padding: 9px 5px 0;
+        margin: 130px 30px 0px 30px;
+        font-size: 0.7em;
+    }
+
+    /* "Full stack developer" text. Margin positions it.*/
+    .ch-info p {
+        padding: 10px 5px 0;
+        margin: 180px 30px;
+        font-size: 12px;
         border-top: 1px solid rgba(255,255,255,0.5);
     }
 
-    .ch-info p a {
-        display: block;
-        color: #e7615e;
-        font-style: normal;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 9px;
-        letter-spacing: 1px;
-        padding-top: 4px;
-        font-family: 'Open Sans', Arial, sans-serif;
+    /* Sizes arrow down icon from font awesome */
+    i#circle {
+        font-size: 2.5em;
     }
 
-    .ch-info p a:hover {
-        color: #fff;
+    /* Customizes "Now scroll along" text */
+    p#back {
+        border-top: 0px;
+        margin: 10px 30px;
+        line-height: 30px;
+    }
+}
+
+/*for-desktop-up*/
+@media screen and (min-width: 1200px) {
+    .ch-grid {
+        margin: 80px 0px 0px 0px;
+    }
+    .ch-grid li {
+        width: 460px;
+        height: 460px;
     }
 
-    .ch-item:hover .ch-info-front {
-        transform: scale(0);
+    /* "Sigrid Marita Kvamme" text */
+    .ch-info h3 {
+        font-size: 4em;
+        padding: 20% 0 0 0;
+        text-shadow:
+                0 0 1px #fff,
+                0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* "Full stack developer" text. Margin positions it.*/
+    .ch-info p {
+        padding: 10px 5px 0;
+        margin: 200px 30px;
+        font-size: 14px;
+        border-top: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .ch-info p#back a {
+        font-size: 13px;
+    }
+
+    /* "I'm taking you for an adventure!" text. */
+    .ch-info h2 {
+        font-size: 3em;
+        margin: 0 15px;
+        padding: 120px 0 0 0;
+        height: 80px;
+        text-shadow:
+                0 0 1px #fff,
+                0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    /* "A good adventure might be out of stock" text. */
+    .ch-info h5 {
+        padding: 9px 5px 0;
+        margin: 150px 30px 0px 30px;
+        font-size: 0.7em;
+    }
+
+    /* Sizes arrow down icon from font awesome */
+    i#circle {
+        font-size: 2.7em;
+    }
+
+    /* Customizes "Now scroll along" text */
+    p#back {
+        border-top: 0px;
+        margin: 10px 30px;
+        line-height: 40px;
+    }
+}
+
+
+/*********** SECTION TWO - SELECTED WORK ************/
+/* Used for viewing "Selected Work" nicely */
+
+/* Modifies default thumbnail properties regarding images.*/
+.work {
+    border-radius: 0;
+    padding: 0;
+    border: 5px solid #FFF;
+    position: relative;
+    display: block;
+}
+
+.work img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Little box on images that contains information about what it is and what it was made with */
+.work .card {
+    position: absolute;
+    padding: 12px;
+    background: rgba(255,255,255, 1);
+    border: none;
+    border-radius: 1.5%;
+    color: #333333;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.work:hover .card {
+    opacity: 1;
+}
+
+/* Small text on card, "Bootstrap, HTML" etc. */
+.work .card p {
+    margin: 0;
+    color: gray;
+    font-style: italic;
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+/* Title on card */
+.work .card h2 {
+    padding: 0;
+    margin: 0;
+    font-family: "Dancing Script", sans-serif;
+    opacity: 0.9;
+}
+
+/*for-desktop-up*/
+@media screen and (min-width: 1200px) {
+    .work img {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+
+    .work img:hover {
+        filter: none;
+        -webkit-filter: grayscale(0%);
+    }
+
+    /* The gray transparent box on each image with info which is shown on-hover.
+     Initial opacity is set to 0, and on hover transitions to 1. */
+    .work .card {
+        position: absolute;
+        background: rgba(0,0,0,0.65);
+        color: #FFF;
+        padding: 10px;
+        -webkit-transition: all 0.8s ease;
+        -moz-transition: all 0.8s ease;
+        transition: all 0.8s ease;
+        bottom: 0;
+        left: 0;
+        right: 0;
         opacity: 0;
+        text-align: center;
+    }
+    .work .card p {
+        margin: 0;
+        color: #fff;
+        font-style: italic;
+        font-size: 13px;
+        opacity: 0.7;
+    }
+}
+
+/*********** SECTION THREE - HOVER EFFECT SOCIAL MEDIA ************/
+/* Hover effect for social media buttons in navbar*/
+.social {
+    position: relative;
+    list-style: none;
+}
+
+.social > li > a > img{
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: transparent;
+}
+
+.social-media {
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+    opacity: 0.7;
+}
+
+.social-media img {
+    width: 30px;
+    heigth: 30px;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+.social-media:hover {
+    opacity: 1;
+}
+.social-media img:hover {
+    filter: none;
+    -webkit-filter: grayscale(0%);
+}
+
+/*********** SECTION FOUR - TEXT STYLING ************/
+/* Section headers, "Selected work", "Profile", etc. */
+.section-header h2{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: "Open Sans Condensed", Arial, sans-serif;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    color: #444;
+}
+
+/* Body text */
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+p a {
+    color: gray;
+}
+
+p a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.align {
+    text-align: center;
+}
+
+/* Sets background for entire project */
+div {
+    background-color: rgba(0,0,0,0.0);
+}
+
+
+/* For aligning social media buttons in nav-bar */
+ul#social li {
+    display: inline;
+    list-style: none;
+    padding: 0;
+}
+
+/* Adjusts positioning of social media buttons */
+ul#social {
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+/*for-desktop-up*/
+@media screen and (min-width: 600px) {
+    ul#social {
+        padding: 10px 20px;
+    }
+}
+
+
+/* FOOTER */
+#myFooter {
+    background-color: #fff;
+    color: black;
+}
+
+#myFooter .footer-copyright {
+    background-color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: gray;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 15px;
+    color: gray;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h2 a{
+    font-size: 35px;
+    text-align: center;
+    color: gray;
+    font-family: 'Dancing Script', Arial, sans-serif;
+}
+
+#myFooter a {
+    color: gray;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: black;
+}
+
+#myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+#myFooter .social-networks a {
+    font-size: 32px;
+    color: gray;
+    padding: 10px;
+}
+
+#myFooter .btn {
+    color: white;
+    background-color: gray;
+    border-radius: 20px;
+    border: none;
+    width: 130px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+
+@media screen and (min-width: 1200px) {
+    #myFooter .social-networks a {
+        -webkit-transition: all 0.8s ease;
+        -moz-transition: all 0.8s ease;
+        transition: all 0.8s ease;
     }
 
-    .ch-item:hover .ch-info-back {
-        transform: scale(1);
-        opacity: 1;
-        pointer-events: auto;
+    #myFooter .social-networks a:hover {
+        text-decoration: none;
     }
+
+    #myFooter .linkedin:hover {
+        color: #0077B5;
+    }
+
+    #myFooter .github:hover {
+        color: #333;
+    }
+
+    #myFooter .codepen:hover {
+        color: #0ebeff;
+    }
+
+    #myFooter .freecodecamp:hover {
+        color: #006400;
+    }
+
+    #myFooter .btn {
+        -webkit-transition: all 0.8s ease;
+        -moz-transition: all 0.8s ease;
+        transition: all 0.8s ease;
+    }
+
+    #myFooter .btn:hover {
+        opacity: 0.8;
+    }
+}
+
+/* OTHER */
+.narrowbodytext {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.narrowbody, hr {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 600px) {
+    .narrowbodytext {
+        max-width: 70%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .narrowbodytext {
+        max-width: 70%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .narrowbodytext {
+        max-width: 60%;
+    }
+
+    .narrowbody, hr {
+        max-width: 90%;
+    }
+}
+
+h2 { position: relative; }
+h2 span { position: absolute; top: -60px;}
+
+#totop {
+    height: 0px;
+}
+
+#profile-pic {
+    width: auto;
+    height: 170px;
+    margin: auto;
+    display: block;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    background-image: url("https://github.com/cherrybeans/cherrybeans.github.io/blob/master/pictures/20170721_140952.jpg?raw=true");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 40%;
+    margin-bottom: 20px;
+}
+
+/*for-desktop-up*/
+@media screen and (min-width: 1200px) {
+    #profile-pic {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -webkit-transition: all 0.8s ease;
+        -moz-transition: all 0.8s ease;
+        transition: all 0.8s ease;
+    }
+
+    #profile-pic:hover {
+        filter: none;
+        -webkit-filter: grayscale(0%);
+    }
+}
