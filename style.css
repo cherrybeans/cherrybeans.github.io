@@ -466,7 +466,7 @@ p#back {
 
 .social-media img {
     width: 30px;
-    heigth: 30px;
+    height: 30px;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
 }
@@ -708,7 +708,7 @@ h2 span { position: absolute; top: -60px;}
     margin: auto;
     display: block;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-    background-image: url("https://github.com/cherrybeans/cherrybeans.github.io/blob/master/pictures/20170721_140952.jpg?raw=true");
+    background-image: url("pictures/profilepic.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0% 40%;
