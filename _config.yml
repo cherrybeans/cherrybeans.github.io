@@ -13,16 +13,16 @@
 
 theme: jekyll-agency
 
-url    : "http://gim-jaeok.github.io"
-baseurl: "/travelkorea" # the subpath of your site, e.g. /blog
+url: "http://cherrybeans.github.io"
+baseurl: "/" # the subpath of your site, e.g. /blog
 
-title      : Travel Korea
-email      : rlawodhr93@naver.com
+title: Travel Norway
+email: rlawodhr93@naver.com
 description: "I'd like to share the local information"
-author     : Jaeok Kim
+author: Jaeok Kim
 # logo:     #optional, defaults to site title
-  # path: assets\img\clients\creative-market.jpg
-  # height: 60 #height in px, defaults to 52px
+# path: assets\img\clients\creative-market.jpg
+# height: 60 #height in px, defaults to 52px
 
 locale: "en-US" # See available languages in _data/sitetext.yml
 
